@@ -19,7 +19,7 @@ def main():
 
 	# Set up serial interface
 	ser = serial.Serial(
-		port = '/dev/ttyACM0',
+		port = '/dev/ttyACM0', # Arduino port
 		baudrate = 9600,
 		timeout = 1.0
 	)
@@ -34,16 +34,19 @@ def main():
 	# Load manually labeled training data
 	trainData = open('dataset.txt','r')
 
+	trainedSigs = []
+	trainedLabels = []
+
 	# Parse training data
 	for trainSample in trainData:
 		
 		splitSamp = trainSample.partition(':')
 
 		sampSig = list(map(int,((splitSamp[0]).strip('[]')).split(',')))
-		sampLabel = splitSamp[2]
+		sampLabel = (splitSamp[2])[:-1]
 		
-		trainedSigs.append()
-		trainedLabels.append()
+		trainedSigs.append(sampSig)
+		trainedLabels.append(sampLabel)
 
 	# Close training data file
 	trainData.close()
@@ -53,21 +56,21 @@ def main():
 
 	# Infinite Loop
 	while(True):
-		cmd = input("\n\nType 'q' to quit or hit any other key to start a measurement: ")
+		cmd = input("\nType 'q' to quit or hit any other key to start a measurement: ")
 		if (cmd == 'q'):
 			# Quit program
-			print("Quitting...\n\n")
+			print("Quitting...\n")
 			ser.close()
 			exit() 
 		else:
 			# Begin a measurement
-			print("Taking a measurement...")
-			ser.write(b'm')
-			ser.flush()
+			print("Taking a measurement...\n")
 
 			# Read response as byte array
 			# Repeat until valid measurement arrives
 			while(True):
+				ser.write(b'm')
+				ser.flush()
 				resp = (ser.readline())[:-2]
 				if (resp != b''):
 					break
