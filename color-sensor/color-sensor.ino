@@ -42,7 +42,7 @@ int GreenVal = 0;
 
 // Illumination source pin and brightness
 const int ledPin = 6;
-const byte brightness = 150;
+const byte brightness = 50;
 
 // Serial command char
 const char start = 'm';
@@ -54,11 +54,14 @@ void setup() {
   //Setup led pin as output and initialize to off
   pinMode(ledPin, OUTPUT);
   analogWrite(ledPin, 255);
+
+  // Clear serial buffer
+  while(Serial.read() != -1);
 }
 
 void loop() {
   // Wait for start command over serial from PC-side program
-  while (Serial.available() > 0) {
+  while (Serial.available()) {
     
     // Check if incoming char is expected start command
     if (Serial.read() == start) {
@@ -67,7 +70,7 @@ void loop() {
       analogWrite(ledPin, 255-brightness);
 
       //Wait a touch
-      delay(200);
+      delay(500);
       
       //Begin measurements, repeat N times
       for (int i=0; i<N; i++){
@@ -98,6 +101,9 @@ void loop() {
 
       //Turn off illumination source
       analogWrite(ledPin, 255);
+
+      // Clear serial buffer
+      while(Serial.read() != -1);
     }
   }
 
