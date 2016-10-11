@@ -12,6 +12,6 @@
 
 - Photos of setup: https://github.com/rustechs/16-722-color-sensing/tree/master/photos
 
-- Demo video: 
+- Demo videos: https://github.com/rustechs/16-722-color-sensing/tree/master/videos
 
 Please see report for details.
