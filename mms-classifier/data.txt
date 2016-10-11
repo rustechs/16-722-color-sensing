@@ -1,0 +1,25 @@
+# [signature]:predicted label:actual label
+[33,107,273,131]:yellow:yellow
+[4,84,231,101]:orange:yellow
+[23,87,197,151]:orange:yellow
+[39,130,354,218]:yellow:yellow
+[7,51,87,302]:green:green
+[21,71,126,387]:green:green
+[13,12,57,326]:green:green
+[10,39,105,221]:green:green
+[81,299,92,34]:red:red
+[93,252,78,17]:red:red
+[53,319,129,2]:red:red
+[59,193,111,45]:orange:red
+[25,77,84,28]:brown:brown
+[13,89,124,39]:brown:brown
+[30,113,107,12]:brown:brown
+[28,71,64,46]:brown:brown
+[8,1,20,23]:blue:blue
+[14,27,16,9]:blue:blue
+[11,3,27,38]:blue:blue
+[4,7,25,11]:blue:blue
+[39,98,105,19]:brown:orange
+[41,98,123,29]:orange:orange
+[17,118,161,73]:orange:orange
+[9,78,103,54]:brown:orange
