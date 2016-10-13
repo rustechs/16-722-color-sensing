@@ -14,4 +14,6 @@
 
 - Demo video: https://www.youtube.com/watch?v=wD3wu7mW78E
 
+- Raw data: https://github.com/rustechs/16-722-color-sensing/tree/master/data
+
 Please see report for details.
